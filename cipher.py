@@ -1,8 +1,8 @@
 #write the function which encrypt user's input by right shift of 5
-def encrypt(sentence):
-    encrypted_message = ''
-    for character in sentence: 
-        if character.islower(): #shifts lowercase letters
+def encrypt(sentence): #defines the function
+    encrypted_message = '' #establish encrypted_message variable
+    for character in sentence: #iterates through the characters in the sentence
+        if character.islower(): #shifts lowercase letters by 5
             new_letter = chr((ord(character) - ord('a') + 5) % 26 + ord('a'))
         elif character.isupper(): #shifts uppercase letters
             new_letter = chr((ord(character) - ord('A') + 5) % 26 + ord('A'))
@@ -12,7 +12,7 @@ def encrypt(sentence):
     return encrypted_message 
 
 #ask user for a message to encrypt
-message = input("What's your secret message?")
+message = input("What's your secret message?  ")
 #encrpy user's message
 print(encrypt(message))
 
